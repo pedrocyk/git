@@ -1,4 +1,4 @@
 # git
-primeiro repositorio
+ repositorio
 teste 1
 
