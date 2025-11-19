@@ -107,4 +107,4 @@ print (lista) ''')
 print ('\033[1mFinalizando...\033[m')
 sleep (1)
 print ('Biblioteca finalizada, tenha um bom dia!!')
-#teste
+#teste pycharm
