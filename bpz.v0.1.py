@@ -9,12 +9,38 @@ while True:
     print('''[1] aula 17 \033[1mlistas\033[m
 [2] aula 16 \033[1mtuplas\033[m
 [3] aula 15
-[4] nenhum
+[4] funções  
+[5] nenhum
+
 ''')
-    opçoes = int(input('Qual aula deseja relembrar?'))
+    opçoes = int(input('Qual item deseja relembrar?'))
     print('~' * 30)
-    if opçoes==4:
+    if opçoes==5:
         break
+    if opçoes==4:
+        while True:
+            print ('[1] localização\n'
+                   '[2] contagem \033[1:35mlen\033[m\n'
+                   '[3] inverção ')
+            opc = int (input ('Qual função quer visualizar?'))
+            if opc == 1:
+                print ('-'*30)
+                print ('Para localizar um item ')
+            if opc ==2:
+                print ('-'*30)
+                print ('Para realizar uma contagem usa-se \033[1:35mlen\033[m\n\033[1mExemplo\033[m:')
+                listaop4= ['Sebastian','Jorge', 'Cristovam''e','josépi']
+                for c in listaop4:
+                    print (f'{c}',end=' ')
+            intopc2= str (input ('\nDigite S para ver como funciona')).lower().strip()[0]
+            if intopc2=='s':
+                print ('_'*30)
+                print ('''listaop4= ['Sebastian','Jorge', 'Cristovam''e','josépi']
+                for c in listaop4:
+                    print (f'{c}',end=' ')''')
+            contin=str (input ('\nQuer ver outro exemplo? [sim/não]')).strip().lower()[0]
+            if contin == 'n':
+                break
     if opçoes==3:
         print ('Em obras...')
         break
@@ -107,4 +133,3 @@ print (lista) ''')
 print ('\033[1mFinalizando...\033[m')
 sleep (1)
 print ('Biblioteca finalizada, tenha um bom dia!!')
-#teste pycharm
