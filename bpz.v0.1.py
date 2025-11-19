@@ -1,5 +1,6 @@
 from time import sleep
 from random import randint
+#a
 while True:
     print ('='*30)
     print (f'{'\033[1:35mBIBLIOTECA PYTHON\033[m':^40}\n'
