@@ -1,5 +1,6 @@
 from time import sleep
 from random import randint
+opçoes=opc=opx=0
 while True:
     print('=' * 30)
     print(f'{'\033[1:35mBIBLIOTECA PYTHON\033[m':^40}\n'
@@ -11,10 +12,10 @@ while True:
 [3] aula 15
 [4] funções  
 [5] nenhum
-
 ''')
-    opçoes = int(input('Qual item deseja relembrar?'))
-    print('~' * 30)
+    if opçoes not in range(1, 6):
+        opçoes = int(input('Qual item deseja relembrar?'))
+        print('~' * 30)
     if opçoes==5:
         break
     if opçoes==4:
@@ -22,7 +23,8 @@ while True:
             print ('[1] localização\n'
                    '[2] contagem \033[1:35mlen\033[m\n'
                    '[3] inverção ')
-            opc = int (input ('Qual função quer visualizar?'))
+            if opc not in range (1,4):
+                opc = int (input ('Qual função quer visualizar?'))
             if opc == 1:
                 print ('-'*30)
                 print ('Para localizar um item ')
@@ -32,15 +34,15 @@ while True:
                 listaop4= ['Sebastian','Jorge', 'Cristovam''e','josépi']
                 for c in listaop4:
                     print (f'{c}',end=' ')
-            intopc2= str (input ('\nDigite S para ver como funciona')).lower().strip()[0]
-            if intopc2=='s':
-                print ('_'*30)
-                print ('''listaop4= ['Sebastian','Jorge', 'Cristovam''e','josépi']
-                for c in listaop4:
-                    print (f'{c}',end=' ')''')
-            contin=str (input ('\nQuer ver outro exemplo? [sim/não]')).strip().lower()[0]
-            if contin == 'n':
-                break
+                intopc2 = str (input ('\nDigite S para ver como funciona')).lower().strip()[0]
+                if intopc2=='s':
+                    print ('_'*30)
+                    print ('''listaop4= ['Sebastian','Jorge', 'Cristovam''e','josépi']
+                    for c in listaop4:
+                        print (f'{c}',end=' ')''')
+                    contin=str (input ('\nQuer ver outro exemplo? [sim/não]')).strip().lower()[0]
+                    if contin == 'n':
+                        break
     if opçoes==3:
         print ('Em obras...')
         break
@@ -100,25 +102,26 @@ print(f'{tupla[resp]}')''')
                 if perg == 'n':
                     break
     if opçoes ==1:
-        print('\033[4:31mListas\033[m')
-        print('As Listas são variáveis compostas e \033[1:31mmutáveis\033[m diferente das tuplas, que permitem armazenar')
-        print('\033[1:31mvários\033[m valores em uma mesma estrutura, acessíveis por \033[1:31mchaves individuais\033[m[].\n\033[1mExemplos\033[m:')
-        opx = int(input('[1] como remover um objeto da lista\n'
-                        '[2] formas de remover um objeto'))
-        print('_' * 30)
-        while True:
-            if opx == 1:
-                print ('Exemplo: ')
-                lista= [randint (0,5),
-                randint (0,5),
-                randint (0,5),
-                randint (0,5)]
-                if 5 in lista:
-                    lista.remove(5)
-                print (f'foram lidos {len(lista)} valores da lista:\n{lista}')
-                continuar = str(input('Quer relembrar o exemplo? [S/N] ')).lower()
-                if continuar == 'n':
-                    break
+            print('\033[4:31mListas\033[m')
+            print('As Listas são variáveis compostas e \033[1:31mmutáveis\033[m diferente das tuplas, que permitem armazenar')
+            print('\033[1:31mvários\033[m valores em uma mesma estrutura, acessíveis por \033[1:31mchaves individuais\033[m[].\n\033[1mExemplos\033[m:')
+            if opx not in range (1,3):
+                opx = int(input('[1] como remover um objeto da lista\n'
+                            '[2] formas de remover um objeto'))
+            print('_' * 30)
+            while True:
+                if opx == 1:
+                    print ('Exemplo: ')
+                    lista= [randint (0,5),
+                    randint (0,5),
+                    randint (0,5),
+                    randint (0,5)]
+                    if 5 in lista:
+                        lista.remove(5)
+                    print (f'foram lidos {len(lista)} valores da lista:\n{lista}')
+                    continuar = str(input('Quer relembrar o exemplo? [S/N] ')).lower()
+                    if continuar == 'n':
+                        break
             if opx==2:
                 print ('na lista existem 3 metodos: 1° \033[1:31mdel lista[0]\033[m (sem espaço) 2° \033[1:31mlista.pop(0)\033[m\ne a 3° que consiste em excluir um objeto' 
 'espefico da lista, sendo ele \033[1:31mlista.remove()\033[m em casos de escassez do item utiliza se o if')
