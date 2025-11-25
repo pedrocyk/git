@@ -6,21 +6,21 @@ opçoes=opc=opx=0
 while True:
     print('=' * 30)
     print(f'{'\033[1:35mBIBLIOTECA PYTHON\033[m':^40}\n'
-          f'{'\033[3mCurso em video\033[m':^35}')
+          f'{'\033[3mDo Pedro\033[m':^35}')
     print('=' * 30)
     print('\033[3mBem vindo a sua Biblioteca Python\033[m')
     print('''[1] aula 17 \033[1mlistas\033[m
 [2] aula 16 \033[1mtuplas\033[m
 [3] aula 15
 [4] funções  
-[5] nenhum
+[5] sair
 ''')
 
     try:
         opçoes = int(input('Qual item deseja relembrar?'))
         print('~' * 30)
-    except valorerro:
-        opçoes= int (input('Erro...\n Qual item deseja relembrar?'))
+    except ValueError:
+        opçoes= int (input('\033[1:31mErro\033[m...\nQual item deseja relembrar?'))
     if opçoes==5:
         break
     if opçoes==4:
@@ -68,18 +68,23 @@ while True:
                 resp = int(input('digite um valor entre 0 e 20:'))
                 print(f'\033[34m{tupla[resp]}\033[m')
                 exe1 = int(input('Para ver o exercício digite 0 ou se não 1: '))
+
+                print ('-'*30)
                 if exe1 == 0:
                     print('''[tupla = ('zero', 'um', 'dois', 'três', 'quatro', 'cinco', 'seis', 'sete', 'oito', 'nove', 'dez', 'onze', 'doze',
                          'treze', 'quatorze', 'quinze', 'dezesseis', 'dezessete', 'dezoito', 'dezenove', 'vinte')
 resp = int(input('digite um valor entre 0 e 20:'))
 print(f'{tupla[resp]}')''')
+
             if opç == 2:
                 tuplas = (randint(1, 10), randint(1, 10), randint(1, 10), randint(1, 10), randint(1, 10))
                 print(f'O maior número sorteado foi {max(tuplas)}')
                 print(f'O menor número sorteado foi {min(tuplas)}')
                 perg = str(input('Deseja ver outro exemplo? SIM/NÃO')).lower().strip()[0]
+                print('-'*20)
                 if perg == 'n':
                     break
+
             if opç==3:
                 cont = 0
                 t = (int(input('digite um valor: ')),
@@ -127,9 +132,9 @@ print(f'{tupla[resp]}')''')
                     if 5 in lista:
                         lista.remove(5)
                     print (f'foram lidos {len(lista)} valores da lista:\n{lista}')
-                    cont1=str (input ('Deseja ver outro exemplo? SIM/NÃO')).lower().strip()[0]
-                    if cont1=='n':
-                        break
+                whilecont=str (input ('Deseja ver outro exemplo? SIM/NÃO')).lower().strip()[0]
+                if whilecont=='n':
+                    break
                 if opx==2:
                     print ('na lista existem 3 metodos: 1° \033[1:31mdel lista[0]\033[m (sem espaço) 2° \033[1:31mlista.pop(0)\033[m\ne a 3° que consiste em excluir um objeto' 
 ' espefico da lista, sendo ele \033[1:31mlista.remove()\033[m em casos de escassez do item utiliza se o if')
@@ -137,7 +142,7 @@ print(f'{tupla[resp]}')''')
                     if exemplo== 's':
                         print ('''lista= [1,2,3,4]
 a= (f'{lista.append(10)}')
-print (lista) ''')
+R: [1, 2, 3, 4, 10] ''')
                 whilecont= str (input ('ver outro exemplo? [S/N]')).lower().strip()[0]
                 if whilecont=='n':
                     break
@@ -149,5 +154,6 @@ print (lista) ''')
 
 print ('\033[1mFinalizando...\033[m')
 sleep (1)
-print ('Biblioteca finalizada, tenha um bom dia!!')
-#arrumei o item dois das listas
+print ('Biblioteca finalizada, tenha um bom dia!!!')
+#organização para separar melhor os codigos um dos outros
+#fazer comentarios grandes para eu entender o codigo
