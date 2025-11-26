@@ -44,15 +44,17 @@ while True:
                   '[4] tirar o espaço ')
 
             # Garante que a opção seja válida
-            if opcao_funcoes not in range(1, 4):
-                opcao_funcoes = int(input('Qual função quer visualizar?'))
-
+            opcao_funcoes = int(input('Qual função quer visualizar? '))
             # Opção 1 - Localização (index)
             if opcao_funcoes == 1:
                 print('-' * 30)
                 print('O index é um método do Python usado para encontrar a posição (índice) de um valor dentro de uma sequência, como listas, tuplas ou strings.'
 'Ele retorna o número da posição da primeira ocorrência do valor procurado.')
-
+                continuar_exemplo= str(input ('Quer ver outra função?')).lower().strip()[0]
+                if continuar_exemplo=='s':
+                    continue
+                elif continuar_exemplo=='n':
+                    break
             # Opção 2 - Contagem com len()
             if opcao_funcoes == 2:
                 print('-' * 30)
@@ -219,3 +221,4 @@ R: [1, 2, 3, 4, 10] ''')
 print('\033[1mFinalizando...\033[m')
 sleep(1)
 print('Biblioteca finalizada, tenha um bom dia!!!')
+#se eu usar o if e o continue ele permanace no laço, e o break volta pro menu principal,
