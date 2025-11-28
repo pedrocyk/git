@@ -178,7 +178,8 @@ else:
 
         while True:
             opcao_listas = int(input('[1] como remover um objeto da lista\n'
-                            '[2] formas de remover um objeto'))
+            '[2] formas de remover um objeto\n'
+            '[3] sair'))
             print('_' * 30)
 
             # Remoção com remove
@@ -194,12 +195,14 @@ else:
 
                 print(f'foram lidos {len(lista)} valores da lista:\n{lista}')
 
-            continuar_exemplo = str(input('Deseja ver outro exemplo? SIM/NÃO')).lower().strip()[0]
-            if continuar_exemplo == 'n':
-                break
+                continuar_exemplo = str(input('Deseja ver outro exemplo? SIM/NÃO')).lower().strip()[0]
+                if continuar_exemplo == 's':
+                    continue
+                elif continuar_exemplo=='n':
+                    break
 
             # Outras formas de remover itens
-            if opcao_listas == 2:
+            elif opcao_listas == 2:
                 print(
                     'na lista existem 3 metodos: 1° \033[1:31mdel lista[0]\033[m (sem espaço) 2° \033[1:31mlista.pop(0)\033[m\ne a 3° que consiste em excluir um objeto'
                     ' espefico da lista, sendo ele \033[1:31mlista.remove()\033[m em casos de escassez do item utiliza se o if')
@@ -209,16 +212,19 @@ else:
                     print('''lista= [1,2,3,4]
 a= (f'{lista.append(10)}')
 R: [1, 2, 3, 4, 10] ''')
-
-            continuar_exemplo = str(input('ver outro exemplo? [S/N]')).lower().strip()[0]
-            if continuar_exemplo == 'n':
+                elif exemplo=='n':
+                    break
+                continuar_exemplo = str(input('ver outro exemplo? [S/N]')).lower().strip()[0]
+                if continuar_exemplo == 's':
+                    continue
+                elif continuar_exemplo=='n':
+                    break
+            elif opcao_listas==3:
                 break
-
-    continuar = str(input('Deseja continuar com o estudo? [S/N] ')).strip().lower()[0]
+    continuar = str(input('Deseja continuar com a biblioteca? [S/N] ')).strip().lower()[0]
     if continuar == 'n':
         break
 
 print('\033[1mFinalizando...\033[m')
 sleep(1)
 print('Biblioteca finalizada, tenha um bom dia!!!')
-#se eu usar o if e o continue ele permanace no laço, e o break volta pro menu principal,
