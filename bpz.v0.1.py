@@ -1,13 +1,12 @@
-from time import sleep  # Importa a função sleep para pausas no programa
-from random import randint  # Importa randint para gerar números aleatórios
+from time import sleep
+from random import randint
 
-# Variáveis que controlam os menus
 opcao_menu_principal = opcao_funcoes = opcao_listas = 0
 
-# Loop principal do programa (menu principal)
+# loop (menu principal)
 while True:
     print('=' * 30)
-    # Título formatado com cores ANSI
+
     print(f'{'\033[1:35mBIBLIOTECA PYTHON\033[m':^40}\n'
           f'{'\033[3mDo Pedro\033[m':^35}')
     print('=' * 30)
@@ -28,7 +27,7 @@ while True:
             opcao_menu_principal = int(input('Qual item deseja relembrar?'))
         except ValueError:
             opcao_menu_principal = int(input('\033[1:31mErro\033[m...\nQual item deseja relembrar?'))
-        if opcao_menu_principal in range (1,5):
+        if opcao_menu_principal in range (1,6):
             break
     print('~' * 30)
     # Opção para sair do programa
@@ -41,7 +40,8 @@ while True:
             print('[1] localização\n'
                   '[2] contagem \033[1:35mlen\033[m\n'
                   '[3] inverção\n'
-                  '[4] tirar o espaço ')
+                  '[4] tirar o espaço'
+                        )
 
             # Garante que a opção seja válida
             opcao_funcoes = int(input('Qual função quer visualizar? '))
@@ -101,7 +101,8 @@ while True:
         while True:
             opcao_tuplas = int(input('[1] Números por extenso.\n'
                             '[2] Maior e menor/random\n'
-                            '[3] Localização em tuplas'))
+                            '[3] Localização em tuplas\n'
+                            '[4] sair'))
             # Opção 1 - Números por extenso
             if opcao_tuplas == 1:
                 numeros_extenso = ('zero', 'um', 'dois', 'três', 'quatro', 'cinco', 'seis', 'sete', 'oito', 'nove', 'dez',
@@ -168,6 +169,8 @@ else:
                 if perg == 'n':
                     break
 
+            if opcao_tuplas == 4:
+                break
     # ==================== MENU DE LISTAS ====================
     if opcao_menu_principal == 1:
         print('\033[4:31mListas\033[m')
@@ -228,3 +231,4 @@ R: [1, 2, 3, 4, 10] ''')
 print('\033[1mFinalizando...\033[m')
 sleep(1)
 print('Biblioteca finalizada, tenha um bom dia!!!')
+#correção da opção sair no menu principal, e adição de um sair em tuplas
