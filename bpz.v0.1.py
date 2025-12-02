@@ -1,15 +1,14 @@
-from time import sleep  # Importa a função sleep para pausas no programa
-from random import randint  # Importa randint para gerar números aleatórios
+from time import sleep
+from random import randint
 
-# Variáveis que controlam os menus
 opcao_menu_principal = opcao_funcoes = opcao_listas = 0
 
-# Loop principal do programa (menu principal)
+# loop (menu principal)
 while True:
     print('=' * 30)
-    # Título formatado com cores ANSI
-    print(f'{'\033[1:35mBIBLIOTECA PYTHON\033[m':^40}\n'
-          f'{'\033[3mDo Pedro\033[m':^35}')
+
+    print(f'{'\033[1:35mBiblioteca em Python\033[m':^40}\n'
+          f'{'\033[3mCurso em video\033[m':^35}')
     print('=' * 30)
 
     print('\033[3mBem vindo a sua Biblioteca Python\033[m')
@@ -28,7 +27,7 @@ while True:
             opcao_menu_principal = int(input('Qual item deseja relembrar?'))
         except ValueError:
             opcao_menu_principal = int(input('\033[1:31mErro\033[m...\nQual item deseja relembrar?'))
-        if opcao_menu_principal in range (1,5):
+        if opcao_menu_principal in range (1,6):
             break
     print('~' * 30)
     # Opção para sair do programa
@@ -38,53 +37,59 @@ while True:
     # ==================== MENU DE FUNÇÕES ====================
     if opcao_menu_principal == 4:
         while True:
-            print('[1] localização\n'
-                  '[2] contagem \033[1:35mlen\033[m\n'
-                  '[3] inverção\n'
-                  '[4] tirar o espaço ')
+            print('[1] localização\033[34m Index\033[m\n'
+                  '[2] contagem \033[36mlen\033[m\n'
+                  '[3] inverção\033[32m Reverse\033[m\n'
+                  '[5] \033[1:31msair\033[m')
 
-            # Garante que a opção seja válida
             opcao_funcoes = int(input('Qual função quer visualizar? '))
             # Opção 1 - Localização (index)
             if opcao_funcoes == 1:
                 print('-' * 30)
-                print('O index é um método do Python usado para encontrar a posição (índice) de um valor dentro de uma sequência, como listas, tuplas ou strings.'
-'Ele retorna o número da posição da primeira ocorrência do valor procurado.')
-                continuar_exemplo= str(input ('Quer ver outra função?')).lower().strip()[0]
-                if continuar_exemplo=='s':
+                print('\033[1:36m[index]\033[m \033[36mMétodo usado para encontrar a posição (índice)\n'
+                      'em listas, tuplas ou strings.\033[m')
+                print ('''Exemplo:
+\033[1mnomes = ['Ana', 'João', 'Maria']\033[m
+\033[1mposicao = nomes.index('Maria')\033[m
+\033[1mprint(posicao)\033[m''')  # saída: 2
+
+                continuar_exemplo= str(input ('Quer ver outra função? [S/N]')).lower().strip()[0]
+                print ('-'*30)
+                if continuar_exemplo== 's':
                     continue
-                elif continuar_exemplo=='n':
+                elif continuar_exemplo== 'n':
                     break
             # Opção 2 - Contagem com len()
             if opcao_funcoes == 2:
                 print('-' * 30)
-                print('Para realizar uma contagem usa-se \033[1:35mlen\033[m\n\033[1mExemplo\033[m:')
-
-                # Lista de exemplo
-                listaop4 = ['Sebastian', 'Jorge', 'Cristovam''e', 'josépi']
-
-                # Mostra os valores da lista
-                for nome in listaop4:
-                    print(f'{nome}', end=' ')
+                print('Para realizar uma contagem usa-se \033[1:35mlen\033[m\n\033[1mExemplo...\033[m')
 
                 # Pergunta se o usuário quer ver como funciona
-                ver_exemplo = str(input('\nDigite S para ver como funciona')).lower().strip()[0]
+                ver_exemplo = str(input('Deseja ver o exemplo? [s/n] ')).lower().strip()[0]
 
                 if ver_exemplo == 's':
                     print('_' * 30)
-                    print('''listaop4= ['Sebastian','Jorge', 'Cristovam''e','josépi']
-                    for c in listaop4:
-                        print (f'{c}',end=' ')''')
-
+                    print('''lista = ['Sebastian','Jorge']
+for cont in lista:
+    print (f'{cont}')  ''')
+                    print ( '[Sebastian , jorge] ')
                     continuar_exemplo = str(input('\nQuer ver outro exemplo? [sim/não]')).strip().lower()[0]
                     if continuar_exemplo == 'n':
                         break
 
             if opcao_funcoes==3:
-                print ('Para inverter uma string é comum usado "[::-1}" \nExemplo: ')
-                A=int('1')
-                if A=='1':
+                print ('_'*30)
+                print ('Para inverter uma \033[32mstring\033[m é comum usado "[::-1]" \n\033[1mExemplo\033[m: ')
+                print ("nome=pedro\nnome_inverso=nome{::-1} #ordep ")
+                continuar_exemplo= str (input ('Quer ver outra função? [S/N]')).lower().strip()[0]
+                print ('~'*30)
+                if continuar_exemplo=='s':
+                    continue
+                elif continuar_exemplo=='n':
                     break
+
+            if opcao_funcoes==5:
+                break
 
     # ==================== OPÇÃO EM OBRAS ====================
     if opcao_menu_principal == 3:
@@ -101,7 +106,8 @@ while True:
         while True:
             opcao_tuplas = int(input('[1] Números por extenso.\n'
                             '[2] Maior e menor/random\n'
-                            '[3] Localização em tuplas'))
+                            '[3] Localização em tuplas\n'
+                            '[4] sair'))
             # Opção 1 - Números por extenso
             if opcao_tuplas == 1:
                 numeros_extenso = ('zero', 'um', 'dois', 'três', 'quatro', 'cinco', 'seis', 'sete', 'oito', 'nove', 'dez',
@@ -168,6 +174,8 @@ else:
                 if perg == 'n':
                     break
 
+            if opcao_tuplas == 4:
+                break
     # ==================== MENU DE LISTAS ====================
     if opcao_menu_principal == 1:
         print('\033[4:31mListas\033[m')
@@ -221,6 +229,7 @@ R: [1, 2, 3, 4, 10] ''')
                     break
             elif opcao_listas==3:
                 break
+
     continuar = str(input('Deseja continuar com a biblioteca? [S/N] ')).strip().lower()[0]
     if continuar == 'n':
         break
