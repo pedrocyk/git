@@ -1,6 +1,6 @@
 from time import sleep
 from random import randint
-
+#criar uma variavel para cada cor e finalizando ela ex: amarelo=033[1:35m ai fim_amarelo=033[m
 def lin1():
     print ('='*30)
 def lin2():
@@ -9,22 +9,24 @@ def lin3():
     print('-'*30)
 def lin4():
     print('_'*30)
+def menu_princ():
+    print('='*30)
+    print(f'{'\033[1:35mBiblioteca em Python\033[m':^40}')
+    print(f'{'\033[3mCurso em video\033[m':^35}')
+    print('='*30)
+
+
 opcao_menu_principal = opcao_funcoes = opcao_listas = 0
 
-# loop (menu principal)
+# loop (principal)
 while True:
-    lin1()
-
-    print(f'{'\033[1:35mBiblioteca em Python\033[m':^40}\n'
-          f'{'\033[3mCurso em video\033[m':^35}')
-    lin1()
-
+    menu_princ()
     print('\033[3mBem vindo a sua Biblioteca Python\033[m')
 
-    # Menu principal
+    # sub menu
     print('''[1] aula 17 \033[1mlistas\033[m
 [2] aula 16 \033[1mtuplas\033[m
-[3] aula 15
+[3] aula 20 \033[1mdicionario\033[m
 [4] funções  
 [5] sair
 ''')
@@ -99,10 +101,13 @@ for cont in lista:
             if opcao_funcoes==5:
                 break
 
-    # ==================== OPÇÃO EM OBRAS ====================
+    # ==================== MENU DE DICIONARIOS ====================
     if opcao_menu_principal == 3:
-        print('Em obras...')
-        break
+        print('Um \033[1:35mdicionário\033[m em Python é uma \033[1:35mestrutura de dados\033[m que armazena informações em \033[1:35mpares de chave e valor\033[m.')
+        print('Cada \033[1:35mchave\033[m é única e serve para acessar seu \033[1:35mvalor\033[m associado, permitindo buscas rápidas e organizadas.')
+        continuar_exemplo= str (input('Deseja continuar? [S/N]'))
+        if continuar_exemplo =='n':
+            continue
 
     # ==================== MENU DE TUPLAS ====================
     if opcao_menu_principal == 2:
@@ -235,6 +240,7 @@ R: [1, 2, 3, 4, 10] ''')
                     break
             elif opcao_listas==3:
                 break
+
 
     continuar = str(input('Deseja continuar com a biblioteca? [S/N] ')).strip().lower()[0]
     if continuar == 'n':
