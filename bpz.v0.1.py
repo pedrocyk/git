@@ -1,26 +1,14 @@
 from time import sleep
 from random import randint
+from funções import espaços, pg_principal
 #criar uma variavel para cada cor e finalizando ela ex: amarelo=033[1:35m ai fim_amarelo=033[m
-def lin1():
-    print ('='*30)
-def lin2():
-    print('~'*30)
-def lin3():
-    print('-'*30)
-def lin4():
-    print('_'*30)
-def menu_princ():
-    print('='*30)
-    print(f'{'\033[1:35mBiblioteca em Python\033[m':^40}')
-    print(f'{'\033[3mCurso em video\033[m':^35}')
-    print('='*30)
 
 
 opcao_menu_principal = opcao_funcoes = opcao_listas = 0
 
 # loop (principal)
 while True:
-    menu_princ()
+    pg_principal.menu_princ()
     print('\033[3mBem vindo a sua Biblioteca Python\033[m')
 
     # sub menu
@@ -39,7 +27,7 @@ while True:
             opcao_menu_principal = int(input('\033[1:31mErro\033[m...\nQual item deseja relembrar?'))
         if opcao_menu_principal in range (1,6):
             break
-    lin2()
+    espaços.lin2()
     # Opção para sair do programa
     if opcao_menu_principal == 5:
         break
@@ -55,7 +43,7 @@ while True:
             opcao_funcoes = int(input('Qual função quer visualizar? '))
             # Opção 1 - Localização (index)
             if opcao_funcoes == 1:
-                lin3()
+                espaços.lin3()
                 print('\033[1:36m[index]\033[m \033[36mMétodo usado para encontrar a posição (índice)\n'
                       'em listas, tuplas ou strings.\033[m')
                 print ('''Exemplo:
@@ -64,21 +52,21 @@ while True:
 \033[1mprint(posicao)\033[m''')  # saída: 2
 
                 continuar_exemplo= str(input ('Quer ver outra função? [S/N]')).lower().strip()[0]
-                lin3()
+                espaços.lin3()
                 if continuar_exemplo== 's':
                     continue
                 elif continuar_exemplo== 'n':
                     break
             # Opção 2 - Contagem com len()
             if opcao_funcoes == 2:
-                lin3()
+                espaços.lin3()
                 print('Para realizar uma contagem usa-se \033[1:35mlen\033[m\n\033[1mExemplo...\033[m')
 
                 # Pergunta se o usuário quer ver como funciona
                 ver_exemplo = str(input('Deseja ver o exemplo? [s/n] ')).lower().strip()[0]
 
                 if ver_exemplo == 's':
-                    lin4()
+                    espaços.lin3()
                     print('''lista = ['Sebastian','Jorge']
 for cont in lista:
     print (f'{cont}')  ''')
@@ -88,11 +76,11 @@ for cont in lista:
                         break
 
             if opcao_funcoes==3:
-                lin4()
+                espaços.lin4()
                 print ('Para inverter uma \033[32mstring\033[m é comum usado "[::-1]" \n\033[1mExemplo\033[m: ')
                 print ("nome=pedro\nnome_inverso=nome{::-1} #ordep ")
                 continuar_exemplo= str (input ('Quer ver outra função? [S/N]')).lower().strip()[0]
-                lin2()
+                espaços.lin2()
                 if continuar_exemplo=='s':
                     continue
                 elif continuar_exemplo=='n':
@@ -131,7 +119,7 @@ for cont in lista:
                 print(f'\033[34m{numeros_extenso[numero]}\033[m')
 
                 exe1 = int(input('Para ver o exercício digite 0 ou se não 1: '))
-                lin3()
+                espaços.lin3()
                 # Mostra o código do exercício
                 if exe1 == 0:
                     print('''[tupla = ('zero', 'um', 'dois', 'três', 'quatro', 'cinco', 'seis', 'sete', 'oito', 'nove', 'dez', 'onze', 'doze',
@@ -146,7 +134,7 @@ print(f'{tupla[resp]}')''')
                 print(f'O menor número sorteado foi {min(tuplas_numeros)}')
 
                 continuar_exemplo = str(input('Deseja ver outro exemplo? SIM/NÃO')).lower().strip()[0]
-                lin3()
+                espaços.lin3()
                 if continuar_exemplo == 'n':
                     break
 
@@ -171,7 +159,7 @@ print(f'{tupla[resp]}')''')
 
                 mostrar_exemplo = str (input('Visualizar antes de continuar? (visualizar/continuar): ')).strip().lower()[0]
                 if mostrar_exemplo == 'v':
-                    lin2()
+                    espaços.lin2()
                     print('''cont = 0
 tuplas = (int(input('digite um valor: ')),
 int(input('Digite outro valor: ')),
@@ -200,7 +188,7 @@ else:
             opcao_listas = int(input('[1] como remover um objeto da lista\n'
             '[2] formas de remover um objeto\n'
             '[3] sair'))
-            lin4()
+            espaços.lin4()
             # Remoção com remove
             if opcao_listas == 1:
                 print('Exemplo: ')
@@ -249,3 +237,5 @@ R: [1, 2, 3, 4, 10] ''')
 print('\033[1mFinalizando...\033[m')
 sleep(1)
 print('Biblioteca finalizada, tenha um bom dia!!!')
+#bpz antes da mudança radical
+
